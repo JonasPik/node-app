@@ -28,6 +28,7 @@ const connectWithRetry = () => {
     .connect(mongoURL)
     .then(() => console.log("succesfully connected to DB"))
     .catch((e) => {
+      console.log("Mongo URL: " + mongoURL);
       console.log(e);
       setTimeout(connectWithRetry, 5000);
     });
