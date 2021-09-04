@@ -2,8 +2,8 @@ version: "3.4"
 
 services:
   nginx:
-  ports:
-    - 80:80
+    ports:
+      - 80:80
 
   node-app:
     image: node-app
