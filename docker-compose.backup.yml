@@ -1,0 +1,18 @@
+version: "3.4"
+
+services:
+  node-app:
+    image: node-app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    # env_file:
+    #   - ./.env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
